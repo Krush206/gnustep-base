@@ -954,7 +954,7 @@ static NSMapTable	*nodeNames = 0;
 	1,
 	"utf-8");
       xmlOutputBufferFlush(buf);
-      string = UTF8StrLen(buf->buffer->content, buf->buffer->use);
+      string = UTF8StrLen(xmlBufContent(buf->buffer), xmlBufUse(buf->buffer));
       xmlOutputBufferClose(buf);
     }
   return string;
